@@ -100,5 +100,5 @@ The following steps can be used to install flux and deploy bigbang:
 
 4. Install the GitRepository and Kustomization objects for the environment
     ```
-    kustomize build ./cluster-overlays/dev/flux-system | kubectl apply -f -
+    kustomize build ./environment-overlays/dev/flux-system | kubectl apply -f -
     ```
