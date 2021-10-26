@@ -1,0 +1,9 @@
+domain: bigbang.dev
+
+flux:
+  interval: 10m
+  rollback:
+    cleanupOnFail: false
+
+jaeger:
+  enabled: true

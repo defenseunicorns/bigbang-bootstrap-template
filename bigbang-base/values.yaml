@@ -1,0 +1,45 @@
+#########
+# CORE
+#########
+
+twistlock:
+  enabled: false
+
+clusterAuditor:
+  enabled: false
+
+logging:
+  enabled: false
+
+fluentbit:
+  enabled: false
+
+istio:
+  enabled: true
+
+monitoring:
+  enabled: false
+
+gatekeeper:
+  enabled: false
+
+jaeger:
+  enabled: false
+
+kiali:
+  enabled: true
+
+istiooperator:
+  enabled: true
+
+eckoperator:
+  enabled: false
+
+
+#########
+# ADDONS
+#########
+addons:
+  gitlab:
+    enabled: false
+    

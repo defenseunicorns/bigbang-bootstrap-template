@@ -1,0 +1,14 @@
+resources:
+  - ../../bigbang-base
+  - ../../apps/pod-info
+  - flux-system
+
+configMapGenerator:
+  - name: environment
+    namespace: bigbang
+    behavior: merge
+    files:
+      - values.yaml=values.yaml
+
+patchesStrategicMerge:
+  - environment-bb-secret.enc.yaml

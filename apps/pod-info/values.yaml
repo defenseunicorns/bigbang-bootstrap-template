@@ -1,0 +1,15 @@
+hostname: bigbang.dev
+
+replicaCount: 3
+
+service:
+  type: NodePort
+
+redis:
+  enabled: false
+
+# tls:
+#   enabled: true
+
+# certificate:
+#   create: true

@@ -1,0 +1,11 @@
+namespace: podinfo 
+
+resources:
+  - deploy.yaml
+  - credentials-copy.yaml
+
+configMapGenerator:
+  - name: common
+    behavior: create
+    files:
+      - values.yaml
