@@ -91,6 +91,11 @@ The following steps can be used to install flux and deploy bigbang:
         --from-file=identity.pub=./identity.pub \
         --from-file=known_hosts=./known_hosts
       ```
+    * `sops-creds` - AWS access key to allow flux to decrypt SOPS protected resources
+      ```
+      k create secret generic -n flux-system sops-creds --from-literal=access_key_id=<key_id> --from-literal=access_key_secret=<key>
+      ```
+      > The `sops-creds` secret is optional / situational, and may not be required for your environment.
 
 3. Install flux
     ```
@@ -100,5 +105,5 @@ The following steps can be used to install flux and deploy bigbang:
 
 4. Install the GitRepository and Kustomization objects for the environment
     ```
-    kustomize build ./environment-overlays/dev/flux-system | kubectl apply -f -
+    kustomize build https://github.com/defenseunicorns/bigbang-bootstrap-template.git/environment-overlays/dev/flux-system?ref=main | kubectl apply -f -
     ```

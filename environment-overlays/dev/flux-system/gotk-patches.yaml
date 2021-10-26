@@ -42,6 +42,18 @@ spec:
           requests:
             cpu: 100m
             memory: 64Mi
+        # The following env vars are only required if you plan to provide sops creds directly via values from a pre-defined secret
+        env:
+        - name: AWS_ACCESS_KEY_ID
+          valueFrom:
+            secretKeyRef:
+              name: sops-creds
+              key: access_key_id
+        - name: AWS_SECRET_ACCESS_KEY
+          valueFrom:
+            secretKeyRef:
+              name: sops-creds
+              key: access_key_secret
 ---
 apiVersion: apps/v1
 kind: Deployment
