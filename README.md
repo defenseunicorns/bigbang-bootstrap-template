@@ -93,7 +93,7 @@ The following steps can be used to install flux and deploy bigbang:
       ```
     * `sops-creds` - AWS access key to allow flux to decrypt SOPS protected resources
       ```
-      k create secret generic -n flux-system sops-creds --from-literal=access_key_id=<key_id> --from-literal=access_key_secret=<key>
+      kubectl create secret generic -n flux-system sops-creds --from-literal=access_key_id=<key_id> --from-literal=access_key_secret=<key>
       ```
       > The `sops-creds` secret is optional / situational, and may not be required for your environment.
 
