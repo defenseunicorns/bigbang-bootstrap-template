@@ -94,7 +94,7 @@ The following steps can be used to install flux and deploy bigbang:
 
 3. Install flux
     ```
-    kustomize build 'https://repo1.dso.mil/platform-one/big-bang/bigbang.git/base/flux?ref=1.18.0'
+    kustomize build 'https://repo1.dso.mil/platform-one/big-bang/bigbang.git/base/flux?ref=1.18.0' | kubectl apply -f -
     ```
     > NOTE: the version `ref` here should match the one defined in `cluster-overlays/<env>/flux-system/kustomization.yaml` which in turn should match the targeted version of bigbang defined in `bigbang-base/kustomization.yaml`
 
