@@ -1,0 +1,27 @@
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: private-cert
+  namespace: istio-system
+spec:
+  secretName: private-cert
+  issuerRef:
+    # The issuer created previously
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  dnsNames:
+  - "*.<ENTER_NAME_HERE>.bigbang.dev"
+---
+apiVersion: cert-manager.io/v1
+kind: Certificate
+metadata:
+  name: public-cert
+  namespace: istio-system
+spec:
+  secretName: public-cert
+  issuerRef:
+    # The issuer created previously
+    name: letsencrypt-prod
+    kind: ClusterIssuer
+  dnsNames:
+  - "*.<ENTER_NAME_HERE>.bigbang.dev"

@@ -48,6 +48,15 @@ The `apps` directory should contain a folder for each package (e.g. `podinfo`) t
 > NOTE: Package definitions in this repository should be limited to manifests which are required to configure a deployment. The manifests which actually define the structure of the app should be maintained in the upstream helm chart.
 * `kustomization.yaml` which references the defined resources within the package and handles any required map generation or patches.
 
+For certmanager, the following are required:
+
+* `certificates/cert.yaml` - Defines certmanager Certificate. Update `dnsNames` field with appropriate values for deployment.
+* `certificates/issuer.yaml`- Defines certmanager ClusterIssuer. Use acme staging server until ready for prod, then replace with acme server. Update
+`solvers/selector/dnsZones` with appropriate values for deployment. Update `dns01` field based on dns provider per instructions in (https://cert-manager.io/docs/configuration/acme/dns01/).
+* `certificates/kustomization.yaml`- references the defined resources within the certificates folder.
+* `certmanager/cert-manager-helm.yaml` - defines namespace, HelmRepository and HelmRelease for deploying certmanager.
+* `certmanager/kustomization.yaml`- references the defined resources within the certmanager folder
+
 ### Bigbang Base
 `bigbang-base` defines the common configuration elements for bigbang. This configuration will be used as the basis for bigbang deployments across each environment. Contents:
 
@@ -60,14 +69,15 @@ The `apps` directory should contain a folder for each package (e.g. `podinfo`) t
 
 * `values.yaml` with non-sensitive bigbang configurations.
 * `kustomization.yaml` which references `bigbang-base` and any desired packages as `resources`
-* Additional environment specific required resources such as secrets, custom credentials - some of which may need to be protected by SOPS encryption.
+* Additional environment specific required resources such as secrets, custom credentials - some of which may need to be protected by SOPS encryption. For certmanager, include 
+certmanager-secret for service account key per https://cert-manager.io/docs/configuration/acme/dns01/.
 
 ### Misc. / Additional
 * `.sops.yaml` contains the sops configuration rules mapping folders (or specific files) to SOPS encryption/decryption resources. 
 
 ## Deployment Instructions
 Assumptions:
-* An existing Kubernetes cluster
+* An existing Kubernetes clusterhttps://cert-manager.io/docs/configuration/acme/dns01/
 * User has kubectl access to the cluster
 * User has kustomize installed 
 

@@ -1,0 +1,25 @@
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-prod
+spec:
+  acme:
+    # Let's Encrypt will use this email to contact you about expiring
+    # certificates, and issues related to your account.
+    email: <NAME>@defenseunicorns.com
+    # server: https://acme-v02.api.letsencrypt.org/directory
+    server: https://acme-staging-v02.api.letsencrypt.org/directory
+    privateKeySecretRef:
+      name: dns-issuer-account-key
+    solvers:
+    - selector:
+        dnsZones:
+          - "<ENTER_NAME_HERE>.bigbang.dev"
+      # The following is for Google CloudDNS, see https://cert-manager.io/docs/configuration/acme/dns01/
+      # for other options.
+      dns01:
+        cloudDNS:
+          project: leapfrogai
+          serviceAccountSecretRef:
+            name: certmanager-secret-access-key
+            key: key.json
