@@ -15,3 +15,36 @@ addons:
     enabled: true
   anchore:
     enabled: true
+    values:
+      anchoreAnalyzer:
+        resources:
+          limits:
+            cpu: 256m
+            memory: 256Mi
+          requests:
+            cpu: 256m
+            memory: 256Mi
+      anchorePolicyEngine:
+        resources:
+          limits:
+            cpu: 256m
+            memory: 256Mi
+          requests:
+            cpu: 256m
+            memory: 256Mi
+      anchoreEnterpriseFeeds:
+        resources:
+          limits:
+            cpu: 256m
+            memory: 256Mi
+          requests:
+            cpu: 256m
+            memory: 256Mi
+      anchoreEnterpriseRbac:
+        resources:
+          limits:
+            cpu: 256m
+            memory: 256Mi
+          requests:
+            cpu: 256m
+            memory: 256Mi
