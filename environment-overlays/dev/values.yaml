@@ -7,3 +7,18 @@ flux:
 
 jaeger:
   enabled: true
+
+gatekeeper:
+  values:
+    violations:
+      allowedDockerRegistries:
+        enabled: true
+        enforcementAction: deny
+        kind: K8sAllowedRepos
+        name: allowed-docker-registries
+        match: {}
+        paramters:
+          repos:
+            - registry1.dso.mil
+            - github.com
+          excludedResources: []

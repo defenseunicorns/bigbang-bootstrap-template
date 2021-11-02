@@ -1,6 +1,7 @@
 resources:
   - ../../bigbang-base
   - ../../apps/pod-info
+  - ../../apps/dependency-track
   - flux-system
 
 configMapGenerator:
