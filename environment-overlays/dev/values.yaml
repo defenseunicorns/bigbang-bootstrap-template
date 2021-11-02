@@ -7,3 +7,9 @@ flux:
 
 jaeger:
   enabled: true
+
+addons:
+  nexus:
+    enabled: true
+  anchore:
+    enabled: true
