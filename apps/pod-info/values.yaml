@@ -8,6 +8,8 @@ service:
 redis:
   enabled: false
 
+istio:
+  enabled: true
 # tls:
 #   enabled: true
 
