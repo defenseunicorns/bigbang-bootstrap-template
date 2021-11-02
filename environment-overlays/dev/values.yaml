@@ -6,7 +6,9 @@ flux:
     cleanupOnFail: false
 
 jaeger:
-  enabled: true
+  enabled: false
+kiali:
+  enabled: false
 
 addons:
   nexus:
