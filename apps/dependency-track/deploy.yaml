@@ -35,3 +35,5 @@ spec:
   dependsOn:
   - name: bigbang
     namespace: bigbang
+  - name: istio
+    namespace: bigbang
