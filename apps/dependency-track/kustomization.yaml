@@ -3,7 +3,6 @@ namespace: dependencytrack
 resources:
   - deploy.yaml
   - credentials-copy.yaml
-  - virtual-service.yaml
 
 configMapGenerator:
   - name: common
