@@ -3,6 +3,7 @@ resources:
   - ../../apps/pod-info
   - ../../apps/dependency-track
   - flux-system
+  - secrets/certmanager-secret.enc.yaml
 
 configMapGenerator:
   - name: environment
@@ -12,4 +13,4 @@ configMapGenerator:
       - values.yaml=values.yaml
 
 patchesStrategicMerge:
-  - environment-bb-secret.enc.yaml
+  - secrets/environment-bb-secret.enc.yaml
