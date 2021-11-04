@@ -14,9 +14,6 @@ logging:
 fluentbit:
   enabled: false
 
-istio:
-  enabled: true
-
 monitoring:
   enabled: true
 
