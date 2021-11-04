@@ -7,8 +7,6 @@ service:
 
 redis:
   enabled: false
-monitoring:
-  enabled: true
 
 istio:
   enabled: true

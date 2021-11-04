@@ -18,7 +18,7 @@ istio:
   enabled: true
 
 monitoring:
-  enabled: false
+  enabled: true
 
 gatekeeper:
   enabled: false
