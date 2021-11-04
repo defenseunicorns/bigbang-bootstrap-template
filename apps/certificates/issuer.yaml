@@ -6,7 +6,7 @@ spec:
   acme:
     # Let's Encrypt will use this email to contact you about expiring
     # certificates, and issues related to your account.
-    email: <NAME>@defenseunicorns.com
+    email: jon@defenseunicorns.com
     # server: https://acme-v02.api.letsencrypt.org/directory
     server: https://acme-staging-v02.api.letsencrypt.org/directory
     privateKeySecretRef:
@@ -14,7 +14,7 @@ spec:
     solvers:
     - selector:
         dnsZones:
-          - "<ENTER_NAME_HERE>.bigbang.dev"
+          - "dependencytrack.bigbang.dev"
       # The following is for Google CloudDNS, see https://cert-manager.io/docs/configuration/acme/dns01/
       # for other options.
       dns01:
