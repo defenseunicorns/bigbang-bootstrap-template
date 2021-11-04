@@ -10,6 +10,11 @@ redis:
 
 istio:
   enabled: true
+
+frontend:
+  env:
+  - name: API_BASE_URL
+    value: "https://dependencytrack-api.bigbang.dev"
 # tls:
 #   enabled: true
 
