@@ -51,7 +51,8 @@ istio:
         no: "hi"
     public:
       hosts:
-      - "*.dependencytrack.bigbang.dev"
+      - dependencytrack-web.dependencytrack.bigbang.dev
+      - dependencytrack-api.dependencytrack.bigbang.dev
       ingressGateway: public-ingressgateway
       tls:
         no: "hi"
