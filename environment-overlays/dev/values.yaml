@@ -21,22 +21,22 @@ gatekeeper:
           excludedResources: []
 
 jaeger:
-  enabled: false
+  enabled: true
   ingress:
     gateway: "private"
 
 kiali:
-  enabled: false
+  enabled: true
   ingress:
     gateway: "private"
 
 monitoring:
-  enabled: false
+  enabled: true
   ingress:
     gateway: "private"
 
 istio:
-  enabled: false
+  enabled: true
   gateways:
     private:
       hosts:
