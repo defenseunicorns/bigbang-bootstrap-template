@@ -8,6 +8,18 @@ service:
 redis:
   enabled: false
 
+jaeger:
+  ingress:
+    gateway: "private"
+
+kiali:
+  ingress:
+    gateway: "private"
+
+monitoring:
+  ingress:
+    gateway: "private"
+
 istio:
   enabled: true
   gateways:
@@ -24,7 +36,7 @@ istio:
         no: "hi"
     public:
       hosts:
-      - code.dependencytrack.bigbang.dev
+      - *.dependencytrack.bigbang.dev
       ingressGateway: public-ingressgateway
       tls:
         no: "hi"
