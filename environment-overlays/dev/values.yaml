@@ -1,3 +1,5 @@
+domain: dependencytrack.bigbang.dev
+
 flux:
   interval: 10m
   rollback:
