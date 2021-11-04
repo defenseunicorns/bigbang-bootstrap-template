@@ -14,17 +14,8 @@ logging:
 fluentbit:
   enabled: false
 
-monitoring:
-  enabled: true
-
 gatekeeper:
   enabled: false
-
-jaeger:
-  enabled: false
-
-kiali:
-  enabled: true
 
 istiooperator:
   enabled: true

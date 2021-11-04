@@ -3,9 +3,6 @@ flux:
   rollback:
     cleanupOnFail: false
 
-jaeger:
-  enabled: true
-
 gatekeeper:
   values:
     violations:

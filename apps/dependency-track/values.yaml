@@ -9,14 +9,17 @@ redis:
   enabled: false
 
 jaeger:
+  enabled: true
   ingress:
     gateway: "private"
 
 kiali:
+  enabled: true
   ingress:
     gateway: "private"
 
 monitoring:
+  enabled: true
   ingress:
     gateway: "private"
 
