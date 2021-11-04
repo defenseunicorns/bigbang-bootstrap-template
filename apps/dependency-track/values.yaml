@@ -8,53 +8,6 @@ service:
 redis:
   enabled: false
 
-jaeger:
-  enabled: true
-  ingress:
-    gateway: "private"
-
-kiali:
-  enabled: true
-  ingress:
-    gateway: "private"
-
-monitoring:
-  enabled: true
-  ingress:
-    gateway: "private"
-
-istio:
-  enabled: true
-  gateways:
-    private:
-      hosts:
-      #- gitlab-registry.dependencytrack.bigbang.dev
-      - tracing.dependencytrack.bigbang.dev
-      - kiali.dependencytrack.bigbang.dev
-      # - kibana.dependencytrack.bigbang.dev
-      - grafana.dependencytrack.bigbang.dev
-      - prometheus.dependencytrack.bigbang.dev
-      ingressGateway: private-ingressgateway
-      tls:
-        no: "hi"
-    public:
-      hosts:
-      - "*.dependencytrack.bigbang.dev"
-      ingressGateway: public-ingressgateway
-      tls:
-        no: "hi"
-  ingressGateways:
-    private-ingressgateway:
-      type: "LoadBalancer"
-      kubernetesResourceSpec:
-        serviceAnnotations:
-          # Ensure mission apps have internal load balancer only
-          service.beta.kubernetes.io/aws-load-balancer-internal: "true"
-          # Enable cross zone load balancing
-          service.beta.kubernetes.io/aws-load-balancer-cross-zone-load-balancing-enabled: "true"
-    public-ingressgateway:
-      type: "LoadBalancer"
-
 frontend:
   env:
   - name: API_BASE_URL
