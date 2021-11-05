@@ -18,12 +18,13 @@ frontend:
 # certificate:
 #   create: true
 istio:
+  enabled: true
   dependencytrack:
     enabled: true
     gateways:
       - istio-system/public
     apiHosts:
-      - dependencytrack-api.{{ .Values.domain }}
+      - dependencytrack-api.dependencytrack.bigbang.dev
     webHosts:
-      - dependencytrack-web.{{ .Values.domain }}
+      - dependencytrack-web.dependencytrack.bigbang.dev
 
