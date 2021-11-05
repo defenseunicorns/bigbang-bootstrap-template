@@ -11,7 +11,7 @@ redis:
 frontend:
   env:
   - name: API_BASE_URL
-    value: "https://dependencytrack-api.bigbang.dev"
+    value: "https://dependencytrack-api.dependencytrack.bigbang.dev"
 # tls:
 #   enabled: true
 
