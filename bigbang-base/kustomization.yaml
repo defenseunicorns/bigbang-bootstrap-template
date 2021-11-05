@@ -3,7 +3,7 @@
 resources:
   - ips.yaml
   - git::https://repo1.dso.mil/platform-one/big-bang/bigbang.git/base?ref=1.18.0
-  #- ../apps/certificates
+  - ../apps/certificates
   - ../apps/certmanager
 
 configMapGenerator:
