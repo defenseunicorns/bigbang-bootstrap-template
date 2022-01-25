@@ -2,7 +2,7 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
 # NOTE - the ref here should match the currently deployed bigbang version
-- git::https://repo1.dso.mil/platform-one/big-bang/bigbang.git/base/flux?ref=1.18.0
+- git::https://repo1.dso.mil/platform-one/big-bang/bigbang.git/base/flux?ref=1.25.0
 - gotk-sync.yaml
 patchesStrategicMerge: 
 - gotk-patches.yaml
