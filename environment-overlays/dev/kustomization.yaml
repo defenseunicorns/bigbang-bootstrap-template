@@ -2,7 +2,7 @@ resources:
   - ../../bigbang-base
   - ../../apps/pod-info
   - flux-system
-  - secrets/certmanager-secret.enc.yaml
+  # - secrets/certmanager-secret.enc.yaml
 
 configMapGenerator:
   - name: environment
