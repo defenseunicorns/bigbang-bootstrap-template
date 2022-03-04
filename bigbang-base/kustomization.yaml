@@ -2,7 +2,7 @@
 #   both the bases reference and the GitRepository reference
 resources:
   - ips.yaml
-  - git::https://repo1.dso.mil/platform-one/big-bang/bigbang.git/base?ref=1.26.0
+  - git::https://repo1.dso.mil/platform-one/big-bang/bigbang.git/base?ref=1.18.0
   # - ../apps/certificates
   # - ../apps/certmanager
 
