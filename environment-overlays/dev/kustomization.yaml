@@ -1,6 +1,6 @@
 resources:
   - ../../bigbang-base
-  - ../../apps/pod-info
+  # - ../../apps/pod-info
   - flux-system
   # - secrets/certmanager-secret.enc.yaml
 
