@@ -14,7 +14,7 @@ spec:
     solvers:
     - selector:
         dnsZones:
-          - "<ENTER_NAME_HERE>.bigbang.dev"
+          - "dash5.bigbang.dev"
       # The following is for Google CloudDNS, see https://cert-manager.io/docs/configuration/acme/dns01/
       # for other options.
       dns01:

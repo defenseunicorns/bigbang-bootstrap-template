@@ -27,7 +27,7 @@ jaeger:
   enabled: false
 
 kiali:
-  enabled: true
+  enabled: false
 
 istiooperator:
   enabled: true
@@ -42,4 +42,3 @@ eckoperator:
 addons:
   gitlab:
     enabled: false
-    
